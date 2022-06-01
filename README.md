@@ -26,3 +26,16 @@ from running several experiment, we have consistent good performance using meta 
 from running experiments (two moon) for some attempts,
 supervised learning with minimal samples, that have criteria of enough representation of the whole data,
 can also have good performance.
+
+# Imbalance case
+From my experience in real world problem, the industry might not have much time and resource to label data or
+to have valid data from user report. for example, consider problem of Account Take over, typically the industry
+will have some report system that recieve complaint from customer. the customer will report the incident of account take over.
+thus, the company will label the account as ATO along with date of ATO login (typically might not be the exact date, and worse not include the exact 
+second, since the customer only know the problem when their money is gone but not when the fraudster login).
+thus this project will be an imbalnce case. and the worst part is undetected ATO login due to the customer is not making a report.
+
+and the question :
+## Can we handle typical Imbalance case like this using meta label?
+It depend, when `key point` of positive samples are good enough we can make the `seen data` 1:4 positive:negative ratio or even close to 1:2 ratio.
+with 1 as imbalance positive and 4 as negative. and the majority of data can be treat as unseen samples.
